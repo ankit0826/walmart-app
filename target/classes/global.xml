@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="3d2b6bdc-08fd-44ea-8a84-ba3314abc8d7" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<http:request-config name="System_API_Config" doc:name="HTTP Request configuration" doc:id="da684c3b-6e4e-4237-8d98-eb5e32393ff1" >
+		<http:request-connection host="${url.host}" port="${url.port}" />
+	</http:request-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="a1dd0173-0dd3-4b5a-ad77-6d3a7ac04849" file="config.yaml" />
+	<http:request-config name="Walmart_API_Config" doc:name="HTTP Request configuration" doc:id="08831b7b-7b9b-4685-a255-db49d1ffefb0" >
+		<http:request-connection protocol="HTTPS" host="${wal.host}" />
+	</http:request-config>
+	<configuration doc:name="Configuration" doc:id="45790522-fbd1-4c03-8795-036f10551cc0" defaultErrorHandler-ref="globalError_Handler" />
+	<error-handler name="globalError_Handler" doc:id="ba8dad39-3e47-401d-92c5-a4bf4e46c53b" >
+		<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="6c7d3370-08d6-43fe-a67b-17f34d9701e0" >
+			<ee:transform doc:name="Transform Message" doc:id="7dde8f8d-73ca-4321-864e-d30aa2ed1de8" >
+				<ee:message >
+					<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	message: "Error occured in Process API"
+}]]></ee:set-payload>
+				</ee:message>
+			</ee:transform>
+		</on-error-continue>
+	</error-handler>
+</mule>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>8964a54b-5f38-4192-81cc-5bab2cd0b08a</groupId>
+  <artifactId>walmart-api</artifactId>
+  <version>1.0.0</version>
+  <name>Walmart API</name>
+  <properties>
+    <classifier>raml</classifier>
+    <main>walmart-api.raml</main>
+    <originalFormatVersion>1.0</originalFormatVersion>
+    <apiVersion>v1</apiVersion>
+    <projectId>65520cef-2545-43f0-ae9c-317f7468d613</projectId>
+    <branchId>master</branchId>
+    <commitId>4d4c56b9d1871c7fcfc405d6306448afba910500</commitId>
+    <keywords/>
+    <type>rest-api</type>
+    <mainFile>walmart-api.raml</mainFile>
+  </properties>
+  <repositories>
+    <repository>
+      <id>anypoint-exchange</id>
+      <url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
+    </repository>
+  </repositories>
+</project>

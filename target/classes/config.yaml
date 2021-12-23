@@ -1,0 +1,11 @@
+http:
+  port: "8081"
+
+url:
+  host: "int-wal-sys-api-v1.us-e2.cloudhub.io"
+  port: "80"
+
+wal:
+  host: "walmart.p.rapidapi.com"
+  
+  

@@ -1,0 +1,4 @@
+%dw 2.0
+
+type auto_305b349c_9983_4f71_856e_d0c88d69cd01_Input_Variables_postalCode = Any
+
