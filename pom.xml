@@ -28,6 +28,16 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<cloudHubDeployment>
+						<muleVersion>4.4.0</muleVersion>
+						<username>ankit-k-singh</username>
+						<password>Pratima@02</password>
+						<applicationName>int-bms-exp-api-v2</applicationName>
+						<environment>Sandbox</environment>
+						<workers>1</workers>
+						<workerType>Micro</workerType>
+						<objectStoreV2>true</objectStoreV2>
+					</cloudHubDeployment>
 					<classifier>mule-application</classifier>
 				</configuration>
 			</plugin>
